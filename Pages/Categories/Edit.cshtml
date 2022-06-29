@@ -1,0 +1,31 @@
+﻿@page
+@model RazorProjectWeb.Pages.Categories.EditModel
+
+<form method="post">
+    <input hidden asp-for="Category.Id" />
+    <div class="border p-3 mt-4">
+        <div row pb-2>
+            <h2 class="text-primary pl-3">UPDATE CATEGORY</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="@Model.Category.Name"></label>
+            <input asp-for="@Model.Category.Name" class="form-control" />
+            <span asp-validation-for="Category.Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="@Model.Category.DisplayOrder"></label>
+            <input asp-for="@Model.Category.DisplayOrder" class="form-control" />
+            <span asp-validation-for="Category.DisplayOrder" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 150px">UPDATE</button>
+        <a asp-page="Index" class="btn btn-secondary" style="width: 150px">BACK TO LIST</a>
+    </div>
+</form>
+@section Scripts{
+
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+
+}
